@@ -23,7 +23,7 @@
         <fieldGroup id="fieldGroup" datasource="orderDs">
             <column width="350px">
                 <field property="customer" optionsDatasource="customersDs"/>
-                <field property="orderId"/>
+                <field property="orderId" editable="false"/>
                 <field property="orderDate"/>
                 <field property="deliveryDate"/>
             </column>
