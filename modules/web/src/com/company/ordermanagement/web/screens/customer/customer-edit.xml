@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://customerEdit.caption"
+        class="com.company.ordermanagement.web.screens.customer.CustomerEdit"
+        datasource="customerDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.ordermanagement.web.screens.customer">
+    <dsContext>
+        <datasource id="customerDs"
+                    class="com.company.ordermanagement.entity.Customer"
+                    view="customer-view">
+            <collectionDatasource id="addressDs" property="address"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions" spacing="true">
+        <fieldGroup id="fieldGroup" datasource="customerDs">
+            <column width="350px">
+                <field property="name"/>
+                <field property="firstName"/>
+                <field property="birthday"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="addressBox" caption="msg://com.company.ordermanagement.entity/Customer.address">
+            <table id="addressTable" width="100%" height="200px">
+                <actions>
+                    <action id="create" openType="DIALOG"/>
+                    <action id="edit" openType="DIALOG"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="street"/>
+                    <column id="postCode"/>
+                    <column id="city"/>
+                </columns>
+                <rows datasource="addressDs"/>
+                <buttonsPanel>
+                    <button action="addressTable.create"/>
+                    <button action="addressTable.edit"/>
+                    <button action="addressTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
