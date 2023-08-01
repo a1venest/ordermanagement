@@ -7,5 +7,6 @@
         <class>com.company.ordermanagement.entity.Product</class>
         <class>com.company.ordermanagement.entity.LineItem</class>
         <class>com.company.ordermanagement.entity.Order</class>
+        <class>com.company.ordermanagement.entity.Document</class>
     </persistence-unit>
 </persistence>

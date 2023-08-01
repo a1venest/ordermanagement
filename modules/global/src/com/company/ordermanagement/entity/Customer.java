@@ -34,6 +34,19 @@ public class Customer extends StandardEntity {
     @Column(name = "BIRTHDAY")
     private Date birthday;
 
+    @Composition
+    @OnDelete(DeletePolicy.CASCADE)
+    @OneToMany(mappedBy = "customer")
+    private List<Order> order;
+
+    public List<Order> getOrder() {
+        return order;
+    }
+
+    public void setOrder(List<Order> order) {
+        this.order = order;
+    }
+
     public List<Address> getAddress() {
         return address;
     }

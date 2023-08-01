@@ -90,3 +90,22 @@ create table ORDERMANAGEMENT_ORDER (
     primary key (ID)
 )^
 -- end ORDERMANAGEMENT_ORDER
+-- begin ORDERMANAGEMENT_DOCUMENT
+create table ORDERMANAGEMENT_DOCUMENT (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    NAME varchar(255) not null,
+    FILE_ID uuid not null,
+    TYPE_ varchar(50),
+    ORDER_ID uuid not null,
+    --
+    primary key (ID)
+)^
+-- end ORDERMANAGEMENT_DOCUMENT
